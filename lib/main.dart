@@ -24,15 +24,15 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xff181818),
+    return Scaffold(
+      backgroundColor: const Color(0xff181818),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 50),
-            Row(
+            const SizedBox(height: 50),
+            const Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Column(
@@ -58,8 +58,8 @@ class MyHomePage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 120),
-            Text(
+            const SizedBox(height: 120),
+            const Text(
               style: TextStyle(
                 color: Colors.white54,
                 fontSize: 24,
@@ -67,7 +67,7 @@ class MyHomePage extends StatelessWidget {
               ),
               "Total Balance",
             ),
-            Text(
+            const Text(
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 38,
@@ -75,8 +75,8 @@ class MyHomePage extends StatelessWidget {
               ),
               "\$5 194 482",
             ),
-            SizedBox(height: 20),
-            Row(
+            const SizedBox(height: 20),
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Button(
@@ -90,6 +90,72 @@ class MyHomePage extends StatelessWidget {
                   textColor: Colors.white,
                 ),
               ],
+            ),
+            const SizedBox(height: 50),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 38,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  "Wallets",
+                ),
+                Text(
+                  style: TextStyle(
+                    color: Colors.white54,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  "View All",
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white10,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        style: TextStyle(color: Colors.white, fontSize: 24),
+                        "Euro",
+                      ),
+                      SizedBox(height: 10),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            style: TextStyle(
+                              color: Colors.white54,
+                              fontSize: 18,
+                            ),
+                            "6 428",
+                          ),
+                          SizedBox(width: 10),
+                          Text(
+                            style: TextStyle(
+                              color: Colors.white54,
+                              fontSize: 16,
+                            ),
+                            "EUR",
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),
