@@ -60,95 +60,97 @@ class MyHomePage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 70),
-            Text(
-              style: TextStyle(
-                color: Colors.white54,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-              "Total Balance",
-            ),
-            Text(
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 38,
-                fontWeight: FontWeight.bold,
-              ),
-              "\$5 194 482",
-            ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Button(
-                  name: "Transfer",
-                  color: Color(0xfff2833a),
-                  textColor: Colors.black,
-                ),
-                Button(
-                  name: "Request",
-                  color: Colors.white10,
-                  textColor: Colors.white,
-                ),
-              ],
-            ),
-            SingleChildScrollView(
-              child: Column(
-                children: [
-                  SizedBox(height: 50),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 38,
-                          fontWeight: FontWeight.bold,
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(height: 70),
+                    Text(
+                      style: TextStyle(
+                        color: Colors.white54,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      "Total Balance",
+                    ),
+                    Text(
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 38,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      "\$5 194 482",
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Button(
+                          name: "Transfer",
+                          color: Color(0xfff2833a),
+                          textColor: Colors.black,
                         ),
-                        "Wallets",
-                      ),
-                      Text(
-                        style: TextStyle(
-                          color: Colors.white54,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
+                        Button(
+                          name: "Request",
+                          color: Colors.white10,
+                          textColor: Colors.white,
                         ),
-                        "View All",
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  Column(
-                    children: [
-                      CurrencyCard(
-                        index: 0,
-                        name: "Euro",
-                        amount: "6 428",
-                        code: "EUR",
-                        icon: Icons.euro_sharp,
-                        isInverted: false,
-                      ),
-                      CurrencyCard(
-                        index: 1,
-                        name: "Bitcoin",
-                        amount: "9.785",
-                        code: "BTC",
-                        icon: Icons.currency_bitcoin,
-                        isInverted: true,
-                      ),
-                      CurrencyCard(
-                        index: 2,
-                        name: "Dollar",
-                        amount: "428",
-                        code: "USD",
-                        icon: Icons.attach_money,
-                        isInverted: false,
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                    SizedBox(height: 50),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 38,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          "Wallets",
+                        ),
+                        Text(
+                          style: TextStyle(
+                            color: Colors.white54,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          "View All",
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    Column(
+                      children: [
+                        CurrencyCard(
+                          index: 0,
+                          name: "Euro",
+                          amount: "6 428",
+                          code: "EUR",
+                          icon: Icons.euro_sharp,
+                          isInverted: false,
+                        ),
+                        CurrencyCard(
+                          index: 1,
+                          name: "Bitcoin",
+                          amount: "9.785",
+                          code: "BTC",
+                          icon: Icons.currency_bitcoin,
+                          isInverted: true,
+                        ),
+                        CurrencyCard(
+                          index: 2,
+                          name: "Dollar",
+                          amount: "428",
+                          code: "USD",
+                          icon: Icons.attach_money,
+                          isInverted: false,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
