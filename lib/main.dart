@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'currency_card.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -24,15 +26,15 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xff181818),
+    return const Scaffold(
+      backgroundColor: Color(0xff181818),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 50),
-            const Row(
+            SizedBox(height: 50),
+            Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Column(
@@ -58,8 +60,8 @@ class MyHomePage extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 120),
-            const Text(
+            SizedBox(height: 70),
+            Text(
               style: TextStyle(
                 color: Colors.white54,
                 fontSize: 24,
@@ -67,7 +69,7 @@ class MyHomePage extends StatelessWidget {
               ),
               "Total Balance",
             ),
-            const Text(
+            Text(
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 38,
@@ -75,8 +77,8 @@ class MyHomePage extends StatelessWidget {
               ),
               "\$5 194 482",
             ),
-            const SizedBox(height: 20),
-            const Row(
+            SizedBox(height: 20),
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Button(
@@ -91,66 +93,58 @@ class MyHomePage extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 50),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Text(
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 38,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  "Wallets",
-                ),
-                Text(
-                  style: TextStyle(
-                    color: Colors.white54,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  "View All",
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white10,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            SingleChildScrollView(
+              child: Column(
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  SizedBox(height: 50),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                        "Euro",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 38,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        "Wallets",
                       ),
-                      SizedBox(height: 10),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text(
-                            style: TextStyle(
-                              color: Colors.white54,
-                              fontSize: 18,
-                            ),
-                            "6 428",
-                          ),
-                          SizedBox(width: 10),
-                          Text(
-                            style: TextStyle(
-                              color: Colors.white54,
-                              fontSize: 16,
-                            ),
-                            "EUR",
-                          ),
-                        ],
+                      Text(
+                        style: TextStyle(
+                          color: Colors.white54,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        "View All",
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 20),
+                  Column(
+                    children: [
+                      CurrencyCard(
+                        index: 0,
+                        name: "Euro",
+                        amount: "6 428",
+                        code: "EUR",
+                        icon: Icons.euro_sharp,
+                        isInverted: false,
+                      ),
+                      CurrencyCard(
+                        index: 1,
+                        name: "Bitcoin",
+                        amount: "9.785",
+                        code: "BTC",
+                        icon: Icons.currency_bitcoin,
+                        isInverted: true,
+                      ),
+                      CurrencyCard(
+                        index: 2,
+                        name: "Dollar",
+                        amount: "428",
+                        code: "USD",
+                        icon: Icons.attach_money,
+                        isInverted: false,
                       ),
                     ],
                   ),
