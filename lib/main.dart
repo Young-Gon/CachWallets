@@ -1,3 +1,4 @@
+import 'package:cach_wallets/total_balance.dart';
 import 'package:flutter/material.dart';
 
 import 'currency_card.dart';
@@ -64,39 +65,7 @@ class MyHomePage extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    SizedBox(height: 70),
-                    Text(
-                      style: TextStyle(
-                        color: Colors.white54,
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      "Total Balance",
-                    ),
-                    Text(
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 38,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      "\$5 194 482",
-                    ),
-                    SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Button(
-                          name: "Transfer",
-                          color: Color(0xfff2833a),
-                          textColor: Colors.black,
-                        ),
-                        Button(
-                          name: "Request",
-                          color: Colors.white10,
-                          textColor: Colors.white,
-                        ),
-                      ],
-                    ),
+                    TotalBalance(totalBalance: 5194482),
                     SizedBox(height: 50),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -152,49 +121,6 @@ class MyHomePage extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Button extends StatelessWidget {
-  final String name;
-
-  final Color color;
-
-  final Color textColor;
-
-  const Button({
-    super.key,
-    required this.name,
-    this.color = Colors.white,
-    this.textColor = Colors.black,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(40),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-        child: Row(
-          children: [
-            Icon(Icons.currency_bitcoin, color: textColor),
-            const SizedBox(width: 8),
-            Text(
-              style: TextStyle(
-                color: textColor,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-              name,
             ),
           ],
         ),
